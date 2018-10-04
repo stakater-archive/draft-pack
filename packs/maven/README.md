@@ -12,7 +12,6 @@ This is a sample draft-pack for java maven applications. It contains
 
 - Jenkinsfile: Sample Jenkinsfile that build the app and creates an image of the application.
 
-Some values in the files would need to be changed when using this draft.
+## Changes when using this Draft Pack
 
-- manifests/deployment.yaml : change the app name, app version, image and container names
-- manifests/service.yaml : change the service name
+Some values in the files would need to be changed with their actual values when using this draft. All such values start with `REPLACE_ME`.
