@@ -1,10 +1,10 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: <app_name>
+  name: REPLACE_ME_APP_NAME
   labels:     
     provider: stakater
-    version: "<app_version>"
+    version: "1.0.0"
 spec:
   replicas: 1
   template:
@@ -15,7 +15,7 @@ spec:
         app: maven-app    
     spec:
       containers:
-      - name: <app_container_name>
-        image: "<app_image_name>"
+      - name: REPLACE_ME_APP_NAME
+        image: "REPLACE_ME_APP_IMAGE"
         ports:
         - containerPort: 8080

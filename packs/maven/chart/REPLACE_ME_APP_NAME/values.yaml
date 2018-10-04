@@ -1,0 +1,11 @@
+labels:
+  group: com.stakater.platform
+  provider: stakater
+  version: 1.0.0
+deployment:
+  replicas: 1
+  podLabels:      
+    app: maven-app
+  container:
+    name: REPLACE_ME_CONTAINER_NAME
+    image: REPLACE_ME_IMAGE_NAME

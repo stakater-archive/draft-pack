@@ -1,12 +1,12 @@
 apiVersion: v1
-name: <app_name>
-description: <app_description>
+name: REPLACE_ME_APP_NAME
+description: REPLACE_ME_APP_DESCRIPTION
 version: 1.0.0
 keywords:
   - stakater
   - java
   - maven
-home: <app_repo_github_link>
+home: REPLACE_ME_GITHUB_LINK
 maintainers:
 - name: Stakater
   email: stakater@aurorasolutions.io
