@@ -15,5 +15,8 @@ spec:
       containers:
       - name: {{ .Values.deployment.container.name }}
         image: {{ .Values.deployment.container.image | quote }}
+        {{- with .Values.deployment.container.probes }}
+{{ toYaml .Values.deployment.container.probes | indent 8 }}
+        {{- end }}
         ports:
         - containerPort: 8080
