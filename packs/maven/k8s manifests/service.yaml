@@ -6,7 +6,7 @@ spec:
   selector:
   # This label is used by Service to connect to pod, 
   # If you change it, so change in deployment's spec labels as well.
-    app: maven-app 
+    app: REPLACE_ME_APP_NAME
   ports:
   - name: web
     port: 8080

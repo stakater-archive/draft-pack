@@ -3,4 +3,5 @@
 
 pushDockerImage {
     dockerRegistryURL = "docker.io"    
+    imagePrefix  = "maven-centos3.5.4-jdk1.8-centos7"
 }
