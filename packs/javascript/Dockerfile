@@ -13,8 +13,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY application/ .
-RUN npm install --silent
-RUN npm install react-scripts@1.1.1 -g --silent
+RUN npm install 
 
 # start app
 CMD ["npm", "start"]
