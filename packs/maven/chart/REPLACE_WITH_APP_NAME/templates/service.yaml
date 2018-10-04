@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+{{ include "<app_name>.labels.stakater" . | indent 4 }}
+{{ include "<app_name>.labels.chart" . | indent 4 }}
+    k8sapp: maven-app   # label used by service monitor
+  name: {{ template "<app_name>.name" . }}
+spec:
+  selector:
+{{ toYaml .Values.appname.deployment.podLabels | indent 4 }}
+  ports:
+  - name: web
+    port: 8080
+    protocol: TCP
+    targetPort: 8080

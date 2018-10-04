@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: <your-app-name>
+  name: <app_name>
 spec:
   selector:
   # This label is used by Service to connect to pod, 
