@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
-@Library('github.com/stakater/fabric8-pipeline-library@master') _
+@Library('github.com/stakater/fabric8-pipeline-library@add-maven-builder') _
 
-pushDockerImage {
+releaseMavenApplication {
     dockerRegistryURL = "docker.io"    
-    imagePrefix  = "maven-centos3.5.4-jdk1.8-centos7"
 }
