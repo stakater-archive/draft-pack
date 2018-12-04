@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
-@Library('github.com/stakater/fabric8-pipeline-library@master') _
+// TODO; Have to change this to master, once that branch gets merged
+@Library('github.com/stakater/fabric8-pipeline-library@add-e2e-teststage') _
 
-pushDockerImage {
+appWithDockerfileBuildRelease {
     dockerRegistryURL = "docker.io"
-    imagePrefix  = "node-9.6.1"
 }

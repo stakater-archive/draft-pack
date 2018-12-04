@@ -12,7 +12,7 @@ spec:
       labels:
       # This label is used by Service to connect to pod, 
       # If you change it, so change Service's labelSelector as well.
-        app: REPLACE_ME_APP_NAME   
+        app: REPLACE_ME_APP_NAME
     spec:
       containers:
       - name: REPLACE_ME_APP_NAME
