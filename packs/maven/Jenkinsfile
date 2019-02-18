@@ -1,6 +1,8 @@
 #!/usr/bin/env groovy
-@Library('github.com/stakater/fabric8-pipeline-library@master') _
+@Library('github.com/stakater/fabric8-pipeline-library@v2.9.8') _
 
 releaseMavenApplication {
-    dockerRegistryURL = "docker.io"    
+    gitUser = "REPLACE_ME_GIT_USER"
+    gitEmail = "REPLACE_ME_GIT_MAIL"
+    appName = "REPLACE_ME_APP_NAME"
 }

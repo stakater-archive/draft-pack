@@ -1,0 +1,117 @@
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: REPLACE_ME_APP_NAME
+    group: com.stakater.platform
+    provider: stakater
+    version: "1.0.0"
+    chart: "REPLACE_ME_APP_NAME-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Tiller"
+  name: REPLACE_ME_APP_NAME
+data:
+  secretKey1: c2VjcmV0VmFsdWUx
+  secretKey2: c2VjcmV0VmFsdWUy
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: REPLACE_ME_APP_NAME
+    group: com.stakater.platform
+    provider: stakater
+    version: "1.0.0"
+    chart: "REPLACE_ME_APP_NAME-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Tiller"
+  name: REPLACE_ME_APP_NAME
+data:
+  key1: value1
+  key2: value2
+  
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: REPLACE_ME_APP_NAME
+    group: com.stakater.platform
+    provider: stakater
+    version: "1.0.0"
+    chart: "REPLACE_ME_APP_NAME-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Tiller"
+  name: REPLACE_ME_APP_NAME
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: REPLACE_ME_APP_NAME
+    group: com.stakater.platform
+    provider: stakater
+    version: "1.0.0"
+    chart: "REPLACE_ME_APP_NAME-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Tiller"
+    k8sapp: maven-app   # label used by servicemonitor to monitor this service
+    expose: "true"
+  name: REPLACE_ME_APP_NAME
+  annotations:
+    config.xposer.stakater.com/Domain: dummy.com    
+spec:
+  selector:
+    app: REPLACE_ME_APP_NAME    
+  ports:
+  - name: web
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: REPLACE_ME_APP_NAME
+    group: com.stakater.platform
+    provider: stakater
+    version: "1.0.0"
+    chart: "REPLACE_ME_APP_NAME-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Tiller"
+  name: REPLACE_ME_APP_NAME
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: REPLACE_ME_APP_NAME        
+    spec:
+      tolerations:
+        - effect: NoSchedule
+          key: dedicated
+          operator: Equal
+          value: app              
+      imagePullSecrets:
+      - name: REPLACE_ME_IMAGE_SECRET
+      containers:
+      - name: REPLACE_ME_APP_NAME
+        image: "REPLACE_ME_IMAGE_NAME:REPLACE_ME_IMAGE_TAG"
+        livenessProbe:
+          httpGet:
+            path: /REPLACE_ME_HEALTH_ENDPOINT
+            port: 8080
+          initialDelaySeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /REPLACE_ME_HEALTH_ENDPOINT
+            port: 8080
+          initialDelaySeconds: 20        
+        ports:
+        - containerPort: 8080
+        serviceAccountName: REPLACE_ME_APP_NAME

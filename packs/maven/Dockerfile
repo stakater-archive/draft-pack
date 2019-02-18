@@ -8,12 +8,12 @@ LABEL name="Stakater Java Maven app" \
 
 USER 1001
 
-WORKDIR $HOME/application
+WORKDIR $HOME
 
-# Exposing 8080 port as we want application to run on port 8080
+# Expose the port on which your service will run
 EXPOSE 8080
 
 # NOTE we assume there's only 1 jar in the target dir
-COPY application/target/*.jar $HOME/application/artifacts/app.jar
+COPY target/*.jar $HOME/artifacts/app.jar
 
 CMD ["java", "-jar", "artifacts/app.jar"]
