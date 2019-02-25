@@ -15,6 +15,12 @@ This is a sample draft-pack for java maven applications. It contains
 
 ## Changes when using this Draft Pack
 
+Copy the following files from this draft-pack
+- Dockerfile
+- Jenkinsfile
+- Makefile
+- deployments folder
+
 Some values in the files would need to be changed with their actual values when using this draft. All such values start with `REPLACE_ME`. The values are:
 
 - REPLACE_ME_APP_NAME
