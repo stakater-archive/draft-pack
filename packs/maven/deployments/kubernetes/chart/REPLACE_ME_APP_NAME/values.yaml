@@ -21,16 +21,16 @@ deployment:
       readinessProbe:
         httpGet:
           path: /REPLACE_ME_HEALTH_ENDPOINT
-          port: 8080
+          port: REPLACE_ME_HEALTH_PORT
         initialDelaySeconds: 20
       livenessProbe:
         httpGet:
           path: /REPLACE_ME_HEALTH_ENDPOINT
-          port: 8080
+          port: REPLACE_ME_HEALTH_PORT
         initialDelaySeconds: 20
 service:
   expose: true
-  port: 8080
+  port: REPLACE_ME_SERVICE_PORT
   annotations:
     config.xposer.stakater.com/Domain: dummy.com    
 configMap:
