@@ -23,11 +23,11 @@ Copy the following files from this draft-pack
 
 Some values in the files would need to be changed with their actual values when using this draft. All such values start with `REPLACE_ME`. The values are:
 
-- REPLACE_ME_APP_NAME
-- REPLACE_ME_IMAGE_SECRET
-- REPLACE_ME_IMAGE_NAME
-- REPLACE_ME_IMAGE_TAG
-- REPLACE_ME_HEALTH_ENDPOINT
-- REPLACE_ME_GIT_USER
-- REPLACE_ME_GIT_MAIL
-- REPLACE_ME_NAMESPACE_NAME
+- REPLACE_ME_APP_NAME  -> replace it with app name in lower case
+- REPLACE_ME_IMAGE_SECRET  -> replace with "" if public image
+- REPLACE_ME_IMAGE_NAME  -> replace it with your org/app name
+- REPLACE_ME_IMAGE_TAG  -> replace it with your app tag
+- REPLACE_ME_HEALTH_ENDPOINT  -> replace it with endpoint of your application or remove the probe section if you dont want liveness and readiness probes
+- REPLACE_ME_GIT_USER  -> the git user's username needed to clone the repo in Jenkins pipeline
+- REPLACE_ME_GIT_MAIL  -> the git user email needed to clone the repo in Jenkins pipeline
+- REPLACE_ME_NAMESPACE_NAME  -> the namespace you want the app to be deployed
