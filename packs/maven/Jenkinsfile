@@ -2,13 +2,10 @@
 @Library('github.com/stakater/fabric8-pipeline-library@v2.10.3') _
 
 releaseMavenApplication {
-    gitUser = "GIT_USER"
-    gitEmail = "GIT_MAIL"
-    appName = "APP_NAME"    
-    e2eTestJob = "E2E_TEST_JOB"
-    performanceTestsJob = "PERFORMANCE_TEST_JOB"
-    mockAppsJobName = 'MOCK_ENV_JOB'
-    devAppsJobName = 'DEV_ENV_JOB'
+    gitUser = "REPLACE_ME_GIT_USER"
+    gitEmail = "REPLACE_ME_GIT_MAIL"
+    appName = "REPLACE_ME_APP_NAME"    
+    deployUsingMakeTarget = true    
     dockerRepositoryURL = 'DOCKER_REPOSITORY'
     chartRepositoryURL = 'CHART_REPOSITORY_URL'
     javaRepositoryURL = 'NEXUS_REPOSITORY_URL/repository/maven'
