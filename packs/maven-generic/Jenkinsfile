@@ -1,15 +1,20 @@
 #!/usr/bin/env groovy
-@Library('github.com/stakater/stakater-pipeline-library@master') _
+@Library('github.com/stakater/stakater-pipeline-library@2.16.1') _
 
-releaseMavenApp {
-    gitUser = "{REPLACE_ME_GIT_USER}"
-    gitEmail = "{REPLACE_ME_GIT_EMAIL}"
-    usePersonalAccessToken = true
-    tokenCredentialID = '{REPLACE_ME_JENKINS_GIT_TOKEN}'
+
+releaseApplication {
     appName = "{REPLACE_ME_APP_NAME}"
+    appType = "maven"
+    builderImage = "stakater/builder-maven:3.5.4-jdk1.8-v2.0.1-v0.0.6"
+    goal = "clean package"
     notifySlack = false
     runIntegrationTest = false
-    deployUsingMakeTarget = true
+    gitUser = "{REPLACE_ME_GIT_USER}"
+    gitEmail = "{REPLACE_ME_GIT_MAIL}"
+    usePersonalAccessToken = true
+    tokenCredentialID = '{REPLACE_ME_JENKINS_GIT_TOKEN}'
+    serviceAccount = "{REPLACE_ME_APP_NAME}"
     dockerRepositoryURL = '{REPLACE_ME_DOCKER_REPOSITORY_URL}'
-    javaRepositoryURL = '{REPLACE_ME_JAVA_REPOSITORY_URL}'
+    chartRepositoryURL = '{CHART_REPOSITORY_URL}'
+    javaRepositoryURL = '{REPLACE_ME_JAVA_REPOSITORY_URL}/repository/maven'
 }

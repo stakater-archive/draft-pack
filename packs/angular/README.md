@@ -1,16 +1,16 @@
-# Draft-Pack for Maven Applications
+# Draft-Pack for Angular Applications
 
-This is a sample draft-pack for java maven applications. It contains
+This is a sample draft-pack for Angular applications. It contains
 
 - manifests: A folder that contains the k8s vanilla manifests, its related deployment and service.
 
 - chart: Helm chart to deploy the application.
 
-- Dockerfile: A sample Dockerfile to build image from maven projects.
+- Dockerfile: A sample Dockerfile to build image from Angular projects.
 
 - Jenkinsfile: Sample Jenkinsfile that build the app and creates an image of the application.
 
-- Application source code can be added to the main folder where the pom.xml is placed.
+- Application source code can be added to the main folder where the Makefile is placed.
 
 
 ## Changes when using this Draft Pack

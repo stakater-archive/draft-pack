@@ -35,3 +35,4 @@ Some values in the files would need to be changed with their actual values when 
 - {REPLACE_ME_JENKINS_GIT_TOKEN} -> id of jenkins credential that has the git token
 - {REPLACE_ME_DOCKER_REPOSITORY_URL} -> url of your docker repository
 - {REPLACE_ME_JAVA_REPOSITORY_URL} -> url of your Java repository
+- CHART_REPOSITORY_URL -> Helm chart repository URL to publish charts

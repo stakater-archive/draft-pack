@@ -1,16 +1,16 @@
-# Draft-Pack for Maven Applications
+# Draft-Pack for Gradle Applications
 
-This is a sample draft-pack for java maven applications. It contains
+This is a sample draft-pack for java gradle applications. It contains
 
 - manifests: A folder that contains the k8s vanilla manifests, its related deployment and service.
 
 - chart: Helm chart to deploy the application.
 
-- Dockerfile: A sample Dockerfile to build image from maven projects.
+- Dockerfile: A sample Dockerfile to build image from gradle projects.
 
 - Jenkinsfile: Sample Jenkinsfile that build the app and creates an image of the application.
 
-- Application source code can be added to the main folder where the pom.xml is placed.
+- Application source code can be added to the main folder where the build.gradle is placed.
 
 
 ## Changes when using this Draft Pack
@@ -34,3 +34,5 @@ Some values in the files would need to be changed with their actual values when 
 - REPLACE_ME_TOKEN_CREDENTIALS_ID -> Token Credentials ID for Git repo cloning
 - DOCKER_REPOSITORY -> docker repository url to push docker images
 - CHART_REPOSITORY_URL -> Helm chart repository URL to publish charts
+- NEXUS_REPOSITORY_URL -> Nexus repository URL to publish artifacts
+
