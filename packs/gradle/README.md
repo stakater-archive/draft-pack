@@ -32,7 +32,7 @@ Some values in the files would need to be changed with their actual values when 
 - REPLACE_ME_GIT_MAIL  -> the git user email needed to clone the repo in Jenkins pipeline
 - REPLACE_ME_NAMESPACE_NAME  -> the namespace you want the app to be deployed
 - REPLACE_ME_TOKEN_CREDENTIALS_ID -> Token Credentials ID for Git repo cloning
-- DOCKER_REPOSITORY -> docker repository url to push docker images
-- CHART_REPOSITORY_URL -> Helm chart repository URL to publish charts
+- REPLACE_ME_DOCKER_REPOSITORY -> docker repository url to push docker images
+- REPLACE_ME_CHART_REPOSITORY_URL -> Helm chart repository URL to publish charts
 - NEXUS_REPOSITORY_URL -> Nexus repository URL to publish artifacts
 

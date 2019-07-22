@@ -13,6 +13,6 @@ releaseApplication {
     usePersonalAccessToken = true
     tokenCredentialID = 'REPLACE_ME_TOKEN_CREDENTIALS_ID'
     serviceAccount = "REPLACE_ME_APP_NAME"
-    dockerRepositoryURL = 'DOCKER_REPOSITORY'
-    chartRepositoryURL = 'CHART_REPOSITORY_URL'
+    dockerRepositoryURL = 'REPLACE_ME_DOCKER_REPOSITORY'
+    chartRepositoryURL = 'REPLACE_ME_CHART_REPOSITORY_URL'
 }
