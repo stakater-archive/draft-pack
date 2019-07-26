@@ -1,0 +1,43 @@
+labels:
+  group: com.stakater.platform
+  provider: stakater
+  version: 1.0.0
+deployment:
+  replicas: 1
+  imagePullSecrets: REPLACE_ME_IMAGE_SECRET
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "app"
+    effect: "NoSchedule"
+  podLabels:      
+    app: REPLACE_ME_APP_NAME
+  container:
+    name: REPLACE_ME_APP_NAME
+    image:
+      name: REPLACE_ME_IMAGE_NAME
+      tag: REPLACE_ME_IMAGE_TAG    
+    probes:
+      readinessProbe:
+        httpGet:
+          path: /REPLACE_ME_HEALTH_ENDPOINT
+          port: REPLACE_ME_HEALTH_PORT
+        initialDelaySeconds: 20
+      livenessProbe:
+        httpGet:
+          path: /REPLACE_ME_HEALTH_ENDPOINT
+          port: REPLACE_ME_HEALTH_PORT
+        initialDelaySeconds: 20
+service:
+  expose: true
+  port: REPLACE_ME_SERVICE_PORT
+  annotations:
+    config.xposer.stakater.com/Domain: dummy.com    
+configMap:
+  data:
+    key1: value1
+    key2: value2
+secret: 
+  data:
+    secretKey1: secretValue1
+    secretKey2: secretValue2    
