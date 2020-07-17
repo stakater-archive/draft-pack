@@ -1,10 +1,10 @@
 FROM gcr.io/distroless/java:8
 
 LABEL name="{REPLACE_ME_APP_NAME}" \
-      maintainer="Stakater <stakater@aurorasolutions.io>" \
+      maintainer="Stakater <hello@stakater.com>" \
       vendor="Stakater" \
       release="1" \
-      summary="Project containing cart service for coolstore"
+      summary="Java Spring boot application"
 
 USER 1001
 
