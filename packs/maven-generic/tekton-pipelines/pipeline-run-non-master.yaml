@@ -1,0 +1,25 @@
+## To run any other branch for your Git repository manually, 
+## uncomment this and replace variables and deploy it
+
+# apiVersion: tekton.dev/v1alpha1
+# kind: PipelineRun
+# metadata:
+#   generateName: REPLACE_ME_APP_NAME-pipeline-
+#   name: REPLACE_ME_APP_NAME-pipeline
+# spec:
+#   pipelineRef:
+#     name: pipeline-maven
+#   timeout: "0h5m30s"
+#   serviceAccountName: "stakater-tekton-builder"
+#   resources:
+#     - name: app-git
+#       resourceSpec:
+#         type: git
+#         params:
+#         - name: revision
+#           value: REPLACE_ME_BRANCH_NAME
+#         - name: url
+#           value: REPLACE_ME_GIT_REPOSITORY_URL
+#     - name: app-image
+#       resourceRef:
+#         name: REPLACE_ME_APP_NAME-image
