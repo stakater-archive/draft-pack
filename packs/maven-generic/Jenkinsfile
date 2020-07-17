@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 @Library('github.com/stakater/stakater-pipeline-library@v2.16.1') _
 
-
 releaseApplication {
     appName = "REPLACE_ME_APP_NAME"
     appType = "maven"
@@ -14,7 +13,7 @@ releaseApplication {
     usePersonalAccessToken = true
     tokenCredentialID = 'REPLACE_ME_TOKEN_CREDENTIALS_ID'
     serviceAccount = "REPLACE_ME_APP_NAME"
-    dockerRepositoryURL = 'REPLACE_ME_REPLACE_ME_DOCKER_REPOSITORY_URL'
+    dockerRepositoryURL = 'REPLACE_ME_DOCKER_REPOSITORY'
     chartRepositoryURL = 'REPLACE_ME_CHART_REPOSITORY_URL'
-    javaRepositoryURL = 'REPLACE_ME_JAVA_REPOSITORY_URL/repository/maven'
+    javaRepositoryURL = 'REPLACE_ME_NEXUS_REPOSITORY_URL/repository/maven'
 }
