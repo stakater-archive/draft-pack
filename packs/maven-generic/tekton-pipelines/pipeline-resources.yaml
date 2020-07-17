@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: REPLACE_ME_APP_NAME-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: REPLACE_ME_DOCKER_REPOSITORY
+---
