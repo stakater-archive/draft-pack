@@ -6,5 +6,16 @@ spec:
   type: image
   params:
     - name: url
-      value: REPLACE_ME_DOCKER_REPOSITORY
+      value: REPLACE_ME_DOCKER_REPOSITORY #complete docker repository as well as the image name e.g. docker.stakater.com/stakater/java-app
 ---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: REPLACE_ME_APP_NAME-git
+spec:
+  type: git
+  params:
+    - name: revision
+      value: master
+    - name: url
+      value: REPLACE_ME_GIT_REPOSITORY_URL
