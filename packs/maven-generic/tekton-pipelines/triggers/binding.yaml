@@ -1,0 +1,33 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: REPLACE_ME_APP_NAME-triggerbinding-push
+spec:
+  params:
+    - name: gitrevision
+      value: master
+    - name: prnumber
+      value: NA
+    - name: namespace
+      value: REPLACE_ME_NAMESPACE_NAME
+    - name: gitrepositoryurl
+      value: "$(body.repository.git_http_url)"
+    - name: image_registry_url
+      value: "REPLACE_ME_DOCKER_REPOSITORY/$(body.project.path_with_namespace)"
+---
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: REPLACE_ME_APP_NAME-triggerbinding-pr
+spec:
+  params:
+    - name: gitrevision
+      value: $(body.object_attributes.last_commit.id)
+    - name: prnumber
+      value: $(body.object_attributes.iid)
+    - name: namespace
+      value: REPLACE_ME_NAMESPACE_NAME
+    - name: gitrepositoryurl
+      value: "$(body.project.git_http_url)"
+    - name: image_registry_url
+      value: "REPLACE_ME_DOCKER_REPOSITORY/$(body.project.path_with_namespace)"

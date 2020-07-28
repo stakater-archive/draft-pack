@@ -1,0 +1,60 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: REPLACE_ME_APP_NAME-triggertemplate
+spec:
+  params:
+    - name: gitrevision
+      description: The git revision
+      default: master
+    - name: gitrepositoryurl
+      description: The git repository url
+    - name: image_registry_url
+      description: The container registry url
+    - name: namespace
+      description: The namespace to create the resources
+    - name: prnumber
+      description: PR number in case of pull request, Empty value if it's a push event
+      default: NA
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1alpha1
+      kind: PipelineResource
+      metadata:
+        name: source-repo-$(uid)
+        namespace: $(params.namespace)
+      spec:
+        type: git
+        params:
+          - name: revision
+            value: $(params.gitrevision)
+          - name: url
+            value: $(params.gitrepositoryurl)
+    - apiVersion: tekton.dev/v1alpha1
+      kind: PipelineResource
+      metadata:
+        name: image-source-$(uid)
+        namespace: $(params.namespace)
+      spec:
+        type: image
+        params:
+          - name: url
+            value: $(params.image_registry_url)
+    - apiVersion: tekton.dev/v1alpha1
+      kind: PipelineRun
+      metadata:
+        name: REPLACE_ME_APP_NAME-pipeline-run-$(uid)
+        namespace: $(params.namespace)
+      spec:
+        serviceAccountName: stakater-tekton-builder
+        pipelineRef:
+          name: pipeline-maven
+        resources:
+          - name: app-git
+            resourceRef:
+              name: source-repo-$(uid)
+          - name: app-image
+            resourceRef:
+              name: image-source-$(uid)
+        params:
+        - name: prnumber
+          value: $(params.prnumber)
