@@ -1,4 +1,4 @@
-FROM gcr.io/distroless/java:8
+FROM registry.access.redhat.com/ubi8/openjdk-8
 
 LABEL name="REPLACE_ME_APP_NAME" \
       maintainer="Stakater <hello@stakater.com>" \
@@ -6,8 +6,7 @@ LABEL name="REPLACE_ME_APP_NAME" \
       release="1" \
       summary="Java Spring boot application"
 
-USER 1001
-
+# Set working directory
 ENV HOME=/opt/app
 WORKDIR $HOME
 
@@ -15,6 +14,9 @@ WORKDIR $HOME
 EXPOSE 8080
 
 # NOTE we assume there's only 1 jar in the target dir
-COPY target/*.jar $HOME/artifacts/app.jar
+COPY /target/*.jar $HOME/artifacts/app.jar
 
-CMD ["artifacts/app.jar"]
+USER 1001
+
+# Set Entrypoint
+ENTRYPOINT exec java $JAVA_OPTS -jar artifacts/app.jar
